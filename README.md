@@ -1,1 +1,1 @@
-# stratum-server
+stratum-server
