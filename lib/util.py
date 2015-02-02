@@ -231,3 +231,13 @@ def script_to_pubkey(key):
     if len(key) != 33: raise Exception('Invalid Address')
     return b'\x21' + key + b'\xac'
 
+def diff_to_target(difficulty):
+    '''Converts difficulty to target'''
+    if settings.DAEMON_ALGO == 'scrypt':
+       diff1 = 0x0000ffff00000000000000000000000000000000000000000000000000000000
+    else:
+       diff1 = 0x00000000ffff0000000000000000000000000000000000000000000000000000
+
+    return float(diff1) / float(difficulty)
+
+

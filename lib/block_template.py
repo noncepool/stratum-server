@@ -77,7 +77,7 @@ class BlockTemplate(halfnode.CBlock):
         self.prevhash_hex = "%064x" % self.hashPrevBlock
         
         self.broadcast_args = self.build_broadcast_args()
-        #log.info("Block height: %i network difficulty: %s" % (self.height, self.diff_to_t(self.target)))
+        log.info("Block height: %i network difficulty: %s" % (self.height, util.diff_to_target(self.target)))
 
                 
     def register_submit(self, extranonce1, extranonce2, ntime, nonce):
