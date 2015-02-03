@@ -144,7 +144,7 @@ class MiningService(GenericService):
                 if is_banned:
                     raise SubmitException("Worker is temporarily banned")
  
-            Interfaces.share_manager.on_submit_share(worker_name, False, difficulty,
+            Interfaces.share_manager.on_submit_share(worker_name, False, difficulty, pool_share,
                 submit_time, False, ip, e[0], 0, job_id)  
             raise
 
